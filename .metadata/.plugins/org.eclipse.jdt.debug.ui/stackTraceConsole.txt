@@ -1,0 +1,3 @@
+quiz_management.getQuestions().forEach(q -> q.setQuiz_management(quiz_management));
+		
+		quiz_info.save(quiz_management); 

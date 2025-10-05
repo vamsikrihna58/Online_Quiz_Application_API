@@ -1,0 +1,15 @@
+package com.Online_Quiz_Application_API.Controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/QuizApi")
+public class Api_Controller {
+    @GetMapping("/get")
+	public String m1() {
+		return "vamsi";
+	}
+
+}

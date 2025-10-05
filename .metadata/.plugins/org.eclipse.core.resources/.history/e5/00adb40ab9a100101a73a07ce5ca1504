@@ -1,0 +1,48 @@
+package com.Online_Quiz_Application_API.Entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "options_info")
+public class OptionsEntity {
+	@Id
+    @Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+//    @Column(name = "options_id")
+//	private int options_Id;
+    @Column(name ="text") 
+	private String text;
+    @Column(name ="correct_Or_Not")
+	private boolean correct_Or_Not;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+//	public int getOptions_Id() {
+//		return options_Id;
+//	}
+//	public void setOptions_Id(int options_Id) {
+//		this.options_Id = options_Id;
+//	}
+	public String getText() {
+		return text;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
+	public boolean isCorrect_Or_Not() {
+		return correct_Or_Not;
+	}
+	public void setCorrect_Or_Not(boolean correct_Or_Not) {
+		this.correct_Or_Not = correct_Or_Not;
+	}
+
+}

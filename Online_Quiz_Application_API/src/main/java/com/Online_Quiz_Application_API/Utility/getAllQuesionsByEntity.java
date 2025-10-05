@@ -1,0 +1,41 @@
+package com.Online_Quiz_Application_API.Utility;
+
+import java.util.List;
+
+public class getAllQuesionsByEntity {
+
+	private int id;
+	private String name;
+	private List<getAllQuesionsModel> optionsEntities;
+
+	public getAllQuesionsByEntity(int id, String name, List<getAllQuesionsModel> optionsEntities) {
+		this.id = id;
+		this.name = name;
+		this.optionsEntities = optionsEntities;
+	}
+
+	// getters and setters
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<getAllQuesionsModel> getOptionsEntities() {
+		return optionsEntities;
+	}
+
+	public void setOptionsEntities(List<getAllQuesionsModel> optionsEntities) {
+		this.optionsEntities = optionsEntities;
+	}
+}

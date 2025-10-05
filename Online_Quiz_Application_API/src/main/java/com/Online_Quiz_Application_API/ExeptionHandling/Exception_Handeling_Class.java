@@ -1,0 +1,16 @@
+package com.Online_Quiz_Application_API.ExeptionHandling;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+@ControllerAdvice
+public class Exception_Handeling_Class {
+	//handleing the quiz not found expetpion
+	@ExceptionHandler(Quiz_Not_Found.class)
+	public ResponseEntity<String> handleQuizNotFound(Quiz_Not_Found ex) {
+		return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+	}
+
+}

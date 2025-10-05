@@ -1,0 +1,94 @@
+package com.Online_Quiz_Application_API.Service;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+import com.Online_Quiz_Application_API.Entity.OptionsEntity;
+import com.Online_Quiz_Application_API.Entity.Questions;
+import com.Online_Quiz_Application_API.Entity.Quiz_Management;
+import com.Online_Quiz_Application_API.Repository.Qustion_repository;
+import com.Online_Quiz_Application_API.Repository.Quiz_info;
+import com.Online_Quiz_Application_API.Utility.SubmitionItems;
+import com.Online_Quiz_Application_API.Utility.SumbitionResponse;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
+@ExtendWith(MockitoExtension.class)
+public class Online_Quiz_ServiceTest {
+
+    @Mock
+    private Quiz_info quiz_info;
+
+    @Mock
+    private Qustion_repository qustion_repository;
+
+    @InjectMocks
+    private Online_Quiz_Service onlineQuizService;
+
+  
+
+    @Test
+    public void testSubmit_SingleChoice() {
+        // --- Mock Quiz and Questions ---
+        Quiz_Management quiz = new Quiz_Management();
+        quiz.setId(1);
+
+        OptionsEntity option1 = new OptionsEntity();
+        option1.setOption(1);
+        option1.setCorrect_Or_Not(true);
+
+        OptionsEntity option2 = new OptionsEntity();
+        option2.setOption(2);
+        option2.setCorrect_Or_Not(false);
+
+        Questions question1 = new Questions();
+        question1.setId(101);
+        question1.setOptionsEntities(Arrays.asList(option1, option2));
+
+        quiz.setQuestions(Arrays.asList(question1));
+
+        // --- Mock repository ---
+        when(quiz_info.findById(1)).thenReturn(Optional.of(quiz));
+
+        // --- Submission input ---
+        SubmitionItems item1 = new SubmitionItems();
+        item1.setId(101);
+        item1.setOption_id(1); // correct
+
+        SubmitionItems item2 = new SubmitionItems();
+        item2.setId(101);
+        item2.setOption_id(2); // incorrect
+
+        List<SubmitionItems> submission = Arrays.asList(item1, item2);
+
+        // --- Call submit ---
+        SumbitionResponse response = onlineQuizService.submit(1, submission);
+
+        // --- Verify ---
+        assertEquals(1, response.getScore()); // only one correct
+        assertEquals(1, response.getTotal()); // total questions = 1
+    }
+
+    @Test
+    public void testSubmit_QuizNotFound() {
+        // Mock quiz not found
+        when(quiz_info.findById(99)).thenReturn(Optional.empty());
+
+        // Expect exception when submit is called
+        try {
+            onlineQuizService.submit(99, List.of());
+        } catch (Exception e) {
+            assertEquals("Quiz not found with id: 99", e.getMessage());
+        }
+    }
+
+}

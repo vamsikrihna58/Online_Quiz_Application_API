@@ -1,0 +1,22 @@
+package com.Online_Quiz_Application_API.Models;
+
+public class SubmitionItems {
+	
+	private int id;
+	private int option_id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getOption_id() {
+		return option_id;
+	}
+	public void setOption_id(int option_id) {
+		this.option_id = option_id;
+	}
+	
+	
+
+}

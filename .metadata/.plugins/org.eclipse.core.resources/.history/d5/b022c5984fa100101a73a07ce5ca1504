@@ -1,0 +1,12 @@
+package com.Online_Quiz_Application_API.Service;
+import com.Online_Quiz_Application_API.Repository.*;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class Online_Quiz_Service {
+	
+	
+	private Quiz_info qi;
+
+}

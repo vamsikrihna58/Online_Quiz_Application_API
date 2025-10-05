@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Online_Quiz_ServiceTest" project="Online_Quiz_Application_API" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.Online_Quiz_Application_API.Service.Online_Quiz_ServiceTest" time="2.463" displayname="Online_Quiz_ServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.Online_Quiz_Application_API.Service.Online_Quiz_ServiceTest]">
+    <testcase name="testSubmit_SingleChoice" classname="com.Online_Quiz_Application_API.Service.Online_Quiz_ServiceTest" time="2.447" displayname="testSubmit_SingleChoice()" uniqueid="[engine:junit-jupiter]/[class:com.Online_Quiz_Application_API.Service.Online_Quiz_ServiceTest]/[method:testSubmit_SingleChoice()]"/>
+    <testcase name="testSubmit_QuizNotFound" classname="com.Online_Quiz_Application_API.Service.Online_Quiz_ServiceTest" time="0.015" displayname="testSubmit_QuizNotFound()" uniqueid="[engine:junit-jupiter]/[class:com.Online_Quiz_Application_API.Service.Online_Quiz_ServiceTest]/[method:testSubmit_QuizNotFound()]"/>
+  </testsuite>
+</testrun>

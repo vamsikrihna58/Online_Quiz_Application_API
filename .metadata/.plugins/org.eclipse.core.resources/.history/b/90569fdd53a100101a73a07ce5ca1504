@@ -1,0 +1,15 @@
+package com.Online_Quiz_Application_API.Entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+//@Entity
+//@Table(name = "questions")
+//@Data
+public class Questions {
+
+//	private int id;
+//	
+//	private String name;
+}

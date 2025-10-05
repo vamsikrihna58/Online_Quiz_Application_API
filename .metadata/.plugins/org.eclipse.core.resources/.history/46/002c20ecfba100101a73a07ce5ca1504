@@ -1,0 +1,55 @@
+package com.Online_Quiz_Application_API.Controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.Online_Quiz_Application_API.Entity.Questions;
+import com.Online_Quiz_Application_API.Entity.Quiz_Management;
+import com.Online_Quiz_Application_API.Service.Online_Quiz_Service;
+import com.Online_Quiz_Application_API.Utility.SubmitionItems;
+import com.Online_Quiz_Application_API.Utility.SumbitionResponse;
+import com.Online_Quiz_Application_API.Utility.getAllQuesionsByEntity;
+
+@RestController
+@RequestMapping("/OnlineQuizApp")
+public class Api_Controller {
+	private Online_Quiz_Service service;
+
+	public Api_Controller(Online_Quiz_Service service) {
+		this.service = service;
+
+	}
+
+	@GetMapping("/saveQuiz") // to create quiz
+	public Quiz_Management save_Quiz(@RequestBody Quiz_Management qm) {
+		return service.save_Quiz_Info(qm);
+	}
+
+	@GetMapping("/addQuesion/{quiz_id}")  //to add quesions in specifice quiz
+	public Questions add_Questions(@PathVariable int quiz_id, @RequestBody Questions questions) {
+		return service.add_Questions(quiz_id, questions);
+
+	}
+
+	@GetMapping("/getAll/{quiz_id}")  // to get the all questions based on specific quiz
+	public List<getAllQuesionsByEntity> get_All_Questions(@PathVariable int quiz_id) {
+		return service.get_All_Questions(quiz_id);
+	}
+
+	@GetMapping("/submit/{quiz_id}") // to submit the answer by specific quiz
+	public SumbitionResponse submit(@PathVariable int quiz_id, @RequestBody List<SubmitionItems> li) {
+		return service.submit(quiz_id, li);
+	}
+	
+	@GetMapping("/allQuiz") // to submit the answer by specific quiz
+	public List<Quiz_Management> get_All_quiz() {
+		return service.get_All_Quiz();
+	}
+
+}

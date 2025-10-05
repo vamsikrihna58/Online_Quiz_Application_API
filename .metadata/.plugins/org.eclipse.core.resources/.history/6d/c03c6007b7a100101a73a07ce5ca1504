@@ -1,0 +1,16 @@
+package com.Online_Quiz_Application_API.Entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "options_info")
+public class OptionsEntity {
+
+	private int id;
+
+	private int options_Id;
+
+	private String text;
+
+}

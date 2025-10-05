@@ -1,0 +1,9 @@
+package com.Online_Quiz_Application_API.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.Online_Quiz_Application_API.Entity.OptionsEntity;
+
+public interface Oprtions extends JpaRepository<OptionsEntity, Integer> {
+
+}

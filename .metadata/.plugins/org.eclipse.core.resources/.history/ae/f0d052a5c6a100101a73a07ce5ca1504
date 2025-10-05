@@ -1,0 +1,39 @@
+package com.Online_Quiz_Application_API.Service;
+
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.Online_Quiz_Application_API.Entity.Questions;
+import com.Online_Quiz_Application_API.Entity.Quiz_Management;
+import com.Online_Quiz_Application_API.Repository.Quiz_info;
+import com.Online_Quiz_Application_API.Repository.Qustion_repository;
+
+@Service
+public class Online_Quiz_Service {
+
+	private Quiz_info quiz_info;
+	private Qustion_repository qustion_repository;
+
+	public Online_Quiz_Service(Quiz_info quiz_info,Qustion_repository qustion_repository) {
+		this.quiz_info = quiz_info;
+		this.qustion_repository=qustion_repository;
+	}
+
+	public Quiz_Management save_Quiz_Info(Quiz_Management quiz_management) {
+
+		return quiz_info.save(quiz_management);
+
+	}
+
+	public Questions add_Questions(int quiz_id,Questions questions) {
+//		Optional<Quiz_Management> byId = quiz_info.findById(quiz_id);
+//		System.out.println(questions.getId());
+//		questions.setQuiz_management(byId.get());
+		 return qustion_repository.save(questions);
+		
+		
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.Online_Quiz_Application_API.Repository;
+
+public class Qustion_repository {
+
+}

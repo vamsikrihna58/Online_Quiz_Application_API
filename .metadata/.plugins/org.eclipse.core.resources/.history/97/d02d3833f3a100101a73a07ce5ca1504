@@ -1,0 +1,36 @@
+package com.Online_Quiz_Application_API.Models;
+
+public class getAllQuesionsModel {
+	
+	private int option_id;
+	
+	private String text;
+	
+	
+
+
+
+	public getAllQuesionsModel(int option, String answer) {
+		this.option_id = option;
+		this.text = answer;
+	}
+
+	
+
+	public int getOption_id() {
+		return option_id;
+	}
+
+	public void setOption_id(int option_id) {
+		this.option_id = option_id;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+}

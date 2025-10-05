@@ -1,0 +1,79 @@
+package com.Online_Quiz_Application_API.Service;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
+import com.Online_Quiz_Application_API.Entity.OptionsEntity;
+import com.Online_Quiz_Application_API.Entity.Questions;
+import com.Online_Quiz_Application_API.Entity.Quiz_Management;
+import com.Online_Quiz_Application_API.Models.SubmitionItems;
+import com.Online_Quiz_Application_API.Models.getAllQuesionsByEntity;
+import com.Online_Quiz_Application_API.Models.getAllQuesionsModel;
+import com.Online_Quiz_Application_API.Repository.Quiz_info;
+import com.Online_Quiz_Application_API.Repository.Qustion_repository;
+
+@Service
+public class Online_Quiz_Service {
+
+	private Quiz_info quiz_info;
+	private Qustion_repository qustion_repository;
+
+	public Online_Quiz_Service(Quiz_info quiz_info, Qustion_repository qustion_repository) {
+		this.quiz_info = quiz_info;
+		this.qustion_repository = qustion_repository;
+	}
+
+	public Quiz_Management save_Quiz_Info(Quiz_Management quiz_management) {
+
+		return quiz_info.save(quiz_management);
+
+	}
+
+	public Questions add_Questions(int quiz_id, Questions questions) {
+		Optional<Quiz_Management> byId = quiz_info.findById(quiz_id);
+		questions.setQuiz_management(byId.get());
+
+		return qustion_repository.save(questions);
+
+	}
+
+	public List<getAllQuesionsByEntity> get_All_Questions(int quiz_id) {
+		Optional<Quiz_Management> byId = quiz_info.findById(quiz_id);
+
+		List<Questions> questions = byId.get().getQuestions();
+
+		return questions.stream().map(o -> {
+			List<OptionsEntity> optionsEntities = o.getOptionsEntities();
+			List<getAllQuesionsModel> collect = optionsEntities.stream().map(q -> {
+				return new getAllQuesionsModel(q.getOption(), q.getAnswer());
+			}).collect(Collectors.toList());
+			return new getAllQuesionsByEntity(o.getId(), o.getName(), collect);
+
+		}).collect(Collectors.toList());
+
+	}
+
+	public int submit(int quiz_id, List<SubmitionItems> items) {
+		Optional<Quiz_Management> byId = quiz_info.findById(quiz_id);
+		List<Questions> questions = byId.get().getQuestions();
+		int score=0;
+		for(SubmitionItems si:items) {
+			Optional<Questions> byId2 = qustion_repository.findById(si.getId());
+			List<OptionsEntity> optionsEntities = byId2.get().getOptionsEntities();
+			if(optionsEntities.contains(si.getOption_id())) {
+				OptionsEntity optionsEntity = optionsEntities.get(si.getOption_id());
+				if(optionsEntity.isCorrect_Or_Not()) {
+					score++;
+				}
+			}
+			
+		}
+		
+		
+		return score;
+		
+	}
+}

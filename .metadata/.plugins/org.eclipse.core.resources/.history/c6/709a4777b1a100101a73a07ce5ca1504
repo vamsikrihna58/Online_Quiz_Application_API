@@ -1,0 +1,10 @@
+package com.Online_Quiz_Application_API.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.Online_Quiz_Application_API.Entity.Questions;
+@Repository
+public interface Qustion_repository extends JpaRepository<Questions, Integer> {
+
+}

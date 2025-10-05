@@ -1,0 +1,27 @@
+package com.Online_Quiz_Application_API.Service;
+
+import org.springframework.stereotype.Service;
+
+import com.Online_Quiz_Application_API.Entity.Quiz_Management;
+import com.Online_Quiz_Application_API.Repository.Quiz_info;
+
+@Service
+public class Online_Quiz_Service {
+	
+	
+	private Quiz_info quiz_info;
+	
+	public Online_Quiz_Service(Quiz_info quiz_info ) {
+		this.quiz_info=quiz_info;
+	}
+	public String save_Quiz_Info(Quiz_Management quiz_management) {
+		
+quiz_management.getQuestions().forEach(q -> q.setQuiz_management(quiz_management));
+		
+		quiz_info.save(quiz_management); 
+		
+		return "saved";
+	}
+	
+
+}

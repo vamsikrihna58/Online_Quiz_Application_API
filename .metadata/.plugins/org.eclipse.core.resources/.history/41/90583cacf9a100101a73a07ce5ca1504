@@ -1,0 +1,5 @@
+package com.Online_Quiz_Application_API.ExeptionHandling;
+
+public class Exception_Handeling_Class {
+
+}
