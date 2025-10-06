@@ -281,7 +281,6 @@ This project includes unit tests for the core logic of the quiz application, suc
 ### Design Choices:
 - **Java & Spring Boot** were used for the backend to leverage dependency injection, REST controllers, and JPA for database interaction.
 - **MySQL** is used for relational storage of quizzes, questions, and options.
-- **DTOs** (Data Transfer Objects) are used for API responses to hide sensitive fields like correct answers and internal IDs.
 - **Exception Handling** is implemented via custom exceptions (`Quiz_Not_Found`) to return meaningful error messages.
 - **Unit Testing** is implemented with JUnit 5 and Mockito to ensure core logic (like scoring) works correctly.
 - **JSON API format** is standardized for all endpoints to maintain consistency.
