@@ -91,11 +91,11 @@ spring.datasource.username=YOU ARE USER NAME
 spring.datasource.password=YOU ARE PASSWORD
 
 ### 3.1. API Endpoints
-
+in postmann while sending input set raw type in body
 ####  Create Quiz
 - **URL:**  --  http://localhost:8080/OnlineQuizApp/saveQuiz
 - **Method:** `POST`  
-- **Input (JSON Body):**
+- **Input raw(JSON Body):**
 ```json
 {
     "title": "science quiz"
@@ -114,7 +114,7 @@ Description : Creates a new quiz with a title.and it shows an empty questions be
   - Replace `{quiz_id}` with the ID of the quiz (e.g., 1, 2, etc.).
       **for example http://localhost:8080/OnlineQuizApp/addQuesion/1**
 - **Method:** `POST`  
-- **Input (JSON Body):**
+- **Input raw(JSON Body):**
 ```json
 {
   "name": "java is a---",
@@ -170,7 +170,7 @@ Description: Fetches all questions for a specific quiz. Correct answers are hidd
   Replace `{quiz_id}` with the ID of the quiz, e.g., `1`, `2`, etc.
       **for example http://localhost:8080/OnlineQuizApp/addQuesion/1**
 - **Method:** `GET`  
-- **Input (JSON Body):**
+- **Input raw(JSON Body):**
 ```json
 [
     {
