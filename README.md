@@ -48,6 +48,8 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
    - **quesions_information**: Stores quiz questions id, question, quiz_id).
    - **options**: Stores question options (id, answer, correct_Or_Not, option, questions_id).
 
+ -- Use these My SQL quesries for creating table
+
     ** for quiz_in formation **
    
   CREATE TABLE `quiz_information` (
