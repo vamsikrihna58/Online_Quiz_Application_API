@@ -48,6 +48,7 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
    - **options**: Stores question options (id, answer, correct_Or_Not, option, questions_id).
 
     ** for quiz_in formation **
+   
   CREATE TABLE `quiz_information` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(45) DEFAULT NULL,
@@ -55,7 +56,9 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
   UNIQUE KEY `idquiz_information_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+
    ** for quesions_information **
+   
    CREATE TABLE `quesions_information` (
   `id` int NOT NULL AUTO_INCREMENT,
   `question` varchar(45) DEFAULT NULL,
@@ -64,7 +67,9 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+
  ** for options **
+ 
  CREATE TABLE `options` (
   `id` int NOT NULL AUTO_INCREMENT,
   `answer` varchar(45) DEFAULT NULL,
@@ -74,6 +79,7 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
  
 **Notes for Table Fields:**
