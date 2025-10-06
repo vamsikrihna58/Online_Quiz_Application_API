@@ -87,6 +87,7 @@ Description : Creates a new quiz with a title.and it shows an empty questions be
 #### 3.2 Add Questions to a Quiz
 - **URL:** `http://localhost:8080/OnlineQuizApp/addQuesion/{quiz_id}`  
   - Replace `{quiz_id}` with the ID of the quiz (e.g., 1, 2, etc.).
+      **for example http://localhost:8080/OnlineQuizApp/addQuesion/1**
 - **Method:** `POST`  
 - **Input (JSON Body):**
 ```json
@@ -116,10 +117,10 @@ Quiz not found with id: {quiz_id}
 Description: Adds a new question with multiple options to the specified quiz. If the quiz ID does not exist in the database, an error message is returned.
 
 #### 3.3 Get All Questions for a Quiz
-- **URL:** `http://localhost:8080/OnlineQuizApp/getAll/{quiz_id}`  
+- **URL:** `http://localhost:8080/OnlineQuizApp/getAll/{quiz_id}`
+ - Replace `{quiz_id}` with the ID of the quiz (e.g., 1, 2, etc.).
+      **for example http://localhost:8080/OnlineQuizApp/addQuesion/1**    
 - **Method:** `GET`  
-- **Path Variable:**
-  - `quiz_id` – the ID of the quiz you want to fetch (e.g., 1, 2, etc.)
 - **Output (JSON) if quiz exists:**
 ```json
 [
@@ -142,6 +143,7 @@ Description: Fetches all questions for a specific quiz. Correct answers are hidd
 #### 3.4 Submit Answers for a Quiz
 - **URL:** `http://localhost:8080/OnlineQuizApp/submit/{quiz_id}`  
   Replace `{quiz_id}` with the ID of the quiz, e.g., `1`, `2`, etc.
+      **for example http://localhost:8080/OnlineQuizApp/addQuesion/1**
 - **Method:** `GET`  
 - **Input (JSON Body):**
 ```json
