@@ -40,6 +40,7 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
 ### 2. Database Setup
 1. Open **MySQL Workbench** and connect to your local MySQL server.
 2. Create a new database named `online_quiz_db`.
+   
    -- CREATE DATABASE online_quiz_db
    
 4. Inside this database, create the following tables:
