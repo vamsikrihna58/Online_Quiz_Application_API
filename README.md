@@ -32,7 +32,7 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
 ## **Setup & Run Instructions**
 
 ## ** clone the project **## 
---- git clone 
+--- git clone https://github.com/vamsikrihna58/Online_Quiz_Application_API.git
 
 ### 1. Install Prerequisites
 - **Java 17** (or higher)
