@@ -48,9 +48,9 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
    - **quesions_information**: Stores quiz questions id, question, quiz_id).
    - **options**: Stores question options (id, answer, correct_Or_Not, option, questions_id).
 
- -- Use these My SQL quesries for creating table
+ -- Use these MySQL quesries for creating table
 
-    ** for quiz_in formation **
+    ** table quiz_information **
    
   CREATE TABLE `quiz_information` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -60,7 +60,7 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-   ** for quesions_information **
+   **table quesions_information **
    
    CREATE TABLE `quesions_information` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -71,7 +71,7 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
- ** for options **
+ **table options **
  
  CREATE TABLE `options` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -96,15 +96,15 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
 ```properties
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/online_quiz_db
-spring.datasource.username=YOU ARE USER NAME
-spring.datasource.password=YOU ARE PASSWORD
+spring.datasource.username=Your MYSQL username
+spring.datasource.password=Your MYSQL password
 
 ### 3.1. API Endpoints
 in postmann while sending input set raw type in body
 ####  Create Quiz
 - **URL:**  --  http://localhost:8080/OnlineQuizApp/saveQuiz
 - **Method:** `POST`  
-- **Input raw(JSON Body):**
+- **Input (raw JSON Body):**
 ```json
 {
     "title": "science quiz"
@@ -123,7 +123,7 @@ Description : Creates a new quiz with a title.and it shows an empty questions be
   - Replace `{quiz_id}` with the ID of the quiz (e.g., 1, 2, etc.).
       **for example http://localhost:8080/OnlineQuizApp/addQuesion/1**
 - **Method:** `POST`  
-- **Input raw(JSON Body):**
+- **Input (raw JSON Body):**
 ```json
 {
   "name": "java is a---",
@@ -179,7 +179,7 @@ Description: Fetches all questions for a specific quiz. Correct answers are hidd
   Replace `{quiz_id}` with the ID of the quiz, e.g., `1`, `2`, etc.
       **for example http://localhost:8080/OnlineQuizApp/addQuesion/1**
 - **Method:** `GET`  
-- **Input raw(JSON Body):**
+- **Input (raw JSON Body):**
 ```json
 [
     {
