@@ -52,12 +52,13 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
 
     ** table quiz_information **
    
-  CREATE TABLE `quiz_information` (
+ CREATE TABLE `quiz_information` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idquiz_information_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 
    **table quesions_information **
