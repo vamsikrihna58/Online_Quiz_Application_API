@@ -49,6 +49,12 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
 - All `id` fields should be **Primary Key (PK), Not Null (NN), and Auto Increment (AI)**.
 - `questions_id` in `options` should reference the `questions` table.
 - `quiz_id` in `questions` should reference the `quiz_management` table.
+  <img width="1576" height="476" alt="image" src="https://github.com/user-attachments/assets/4077e928-8e89-481b-ac6d-4e716c4c7076" />
+  <img width="1580" height="449" alt="image" src="https://github.com/user-attachments/assets/44729e55-2f23-4552-9a3d-9983dfd597ba" />
+ <img width="1574" height="458" alt="image" src="https://github.com/user-attachments/assets/2eece60b-38ec-418f-b856-6240cc600916" />
+
+
+
 
 ### 3. Configure Application and API End Points
 3.0. configuration
