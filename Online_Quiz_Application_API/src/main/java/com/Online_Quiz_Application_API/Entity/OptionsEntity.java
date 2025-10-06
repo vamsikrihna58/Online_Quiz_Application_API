@@ -20,7 +20,7 @@ public class OptionsEntity {
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-    @Column(name = "`option`")
+    @Column(name = "`option_id`")
 	private int option;
 	@Column(name = "`answer`")
 	private String answer;
