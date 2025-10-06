@@ -93,7 +93,7 @@ spring.datasource.password=YOU ARE PASSWORD
 ### 3.1. API Endpoints
 
 ####  Create Quiz
-- **URL:** `http://localhost:8080/OnlineQuizApp/saveQuiz`  
+- **URL:**  --  http://localhost:8080/OnlineQuizApp/saveQuiz
 - **Method:** `POST`  
 - **Input (JSON Body):**
 ```json
@@ -110,7 +110,7 @@ spring.datasource.password=YOU ARE PASSWORD
 Description : Creates a new quiz with a title.and it shows an empty questions because we just created quiz not added any questions
 
 #### 3.2 Add Questions to a Quiz
-- **URL:** `http://localhost:8080/OnlineQuizApp/addQuesion/{quiz_id}`  
+- **URL:** -- http://localhost:8080/OnlineQuizApp/addQuesion/{quiz_id}  
   - Replace `{quiz_id}` with the ID of the quiz (e.g., 1, 2, etc.).
       **for example http://localhost:8080/OnlineQuizApp/addQuesion/1**
 - **Method:** `POST`  
@@ -142,7 +142,7 @@ Quiz not found with id: {quiz_id}
 Description: Adds a new question with multiple options to the specified quiz. If the quiz ID does not exist in the database, an error message is returned.
 
 #### 3.3 Get All Questions for a Quiz
-- **URL:** `http://localhost:8080/OnlineQuizApp/getAll/{quiz_id}`
+- **URL:** --  http://localhost:8080/OnlineQuizApp/getAll/{quiz_id}
  - Replace `{quiz_id}` with the ID of the quiz (e.g., 1, 2, etc.).
       **for example http://localhost:8080/OnlineQuizApp/addQuesion/1**    
 - **Method:** `GET`  
@@ -166,7 +166,7 @@ Quiz not found with id: {quiz_id}
 Description: Fetches all questions for a specific quiz. Correct answers are hidden in this response to prevent cheating.
 
 #### 3.4 Submit Answers for a Quiz
-- **URL:** `http://localhost:8080/OnlineQuizApp/submit/{quiz_id}`  
+- **URL:** -- http://localhost:8080/OnlineQuizApp/submit/{quiz_id}
   Replace `{quiz_id}` with the ID of the quiz, e.g., `1`, `2`, etc.
       **for example http://localhost:8080/OnlineQuizApp/addQuesion/1**
 - **Method:** `GET`  
@@ -196,7 +196,7 @@ Quiz not found with id: {quiz_id}
 Description: Submits answers for a specific quiz and returns the score along with the total number of questions. If the quiz ID is invalid, an error message is returned.
 
 #### 3.5 Get All Quizzes
-- **URL:** `http://localhost:8080/OnlineQuizApp/allQuiz`
+- **URL:** -- http://localhost:8080/OnlineQuizApp/allQuiz
 - **Method:** `GET`
 - **Input:** None
 - **Output (JSON):**
