@@ -40,22 +40,47 @@ The **Online Quiz Application API** is a backend system that allows creating, ma
 ### 2. Database Setup
 1. Open **MySQL Workbench** and connect to your local MySQL server.
 2. Create a new database named `online_quiz_db`.
-3. Inside this database, create the following tables:
+   -- CREATE DATABSE online_quiz_db
+   
+4. Inside this database, create the following tables:
    - **quiz_information**: Stores quiz details (id, title).
    - **quesions_information**: Stores quiz questions id, question, quiz_id).
    - **options**: Stores question options (id, answer, correct_Or_Not, option, questions_id).
 
+    ** for quiz_in formation **
+  CREATE TABLE `quiz_information` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idquiz_information_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+   ** for quesions_information **
+   CREATE TABLE `quesions_information` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `question` varchar(45) DEFAULT NULL,
+  `quiz_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+ ** for options **
+ CREATE TABLE `options` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `answer` varchar(45) DEFAULT NULL,
+  `correct_Or_Not` varchar(45) DEFAULT NULL,
+  `option_id` varchar(45) DEFAULT NULL,
+  `questions_id` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+ 
 **Notes for Table Fields:**
 - All `id` fields should be **Primary Key (PK), Not Null (NN), and Auto Increment (AI)**.
 - `questions_id` in `options` should reference the `questions` table.
 - `quiz_id` in `questions` should reference the `quiz_management` table.
-  <img width="1576" height="476" alt="image" src="https://github.com/user-attachments/assets/4077e928-8e89-481b-ac6d-4e716c4c7076" />
-  <img width="1580" height="449" alt="image" src="https://github.com/user-attachments/assets/44729e55-2f23-4552-9a3d-9983dfd597ba" />
- <img width="1574" height="458" alt="image" src="https://github.com/user-attachments/assets/2eece60b-38ec-418f-b856-6240cc600916" />
-
-
-
-
+ 
 ### 3. Configure Application and API End Points
 3.0. configuration
 - Open `application.properties` (or `application.yml`) and set your MySQL credentials:
